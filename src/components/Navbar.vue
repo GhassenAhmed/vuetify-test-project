@@ -1,7 +1,6 @@
 <template>
    <nav>
     <v-app-bar app flat >  
-    
         <v-toolbar-side-icon >
             <v-btn  text @click="drawer=!drawer">
                 <v-icon color="grey">mdi-view-list</v-icon>
@@ -17,7 +16,7 @@
         </v-btn>
         
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" app class="indigo">
+    <v-navigation-drawer v-model="drawer" app class="primary">
         <p>test</p>
     </v-navigation-drawer>
    </nav>
