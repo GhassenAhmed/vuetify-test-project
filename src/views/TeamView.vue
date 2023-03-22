@@ -2,9 +2,43 @@
      <div class="team">
     <h1 class="subheading grey--text">Team</h1>
     <v-container class="my-5"> 
-      content
+      <v-layout row wrap class="mt-5">
+        <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
+           <v-card flat class=" text-center pa-3 ml-3 mb-5  deep-purple lighten-4">
+            <v-responsive class="pt-4">
+              image
+            </v-responsive>
+            <v-card-text>
+              <div class="subheading">{{ person.name }}</div>
+              <div class="grey--text">{{ person.role }}</div>
+            </v-card-text>
+            <v-card-actions class="justify-center">
+              <v-btn flat color="grey lighten-2">
+                <v-icon small left > mdi-send-outline</v-icon>
+                <span>Message</span>
+              </v-btn>
+            </v-card-actions>
+           </v-card>
+        </v-flex>
+      </v-layout>
     </v-container>
   </div>
 </template>
 <script>
+export default {
+  data(){
+    return{
+      team:[
+        {name:'Ghassen Ahmed',role:'front-end'},
+        {name:'Talel Mejri',role:'full stack developer'},
+        {name:'Hkimi Amine',role:'back-end'},
+        {name:'Naamen Malek',role:'graphic designer'}
+      ]
+    }
+  }
+   
+}
 </script>
+<style>
+
+</style>
