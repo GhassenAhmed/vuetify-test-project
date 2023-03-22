@@ -13,6 +13,7 @@
         <v-spacer></v-spacer>
         <v-btn  flat color="grey  lighten-3  grey--text">
             <span>Sign out</span>
+            <v-icon class="px-3">mdi-account-arrow-right-outline</v-icon>
         </v-btn>
         
     </v-app-bar>
