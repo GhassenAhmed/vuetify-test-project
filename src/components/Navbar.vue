@@ -16,16 +16,33 @@
         </v-btn>
         
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" app class="primary">
-        <p>test</p>
+    <v-navigation-drawer v-model="drawer" app class="deep-purple lighten-2">
+        <v-list>
+            <v-list-item v-for="i in links" :key="i.text" route :to="i.route">
+                <v-list-item-action>
+                    <v-icon class="white--text">{{i.icon}}</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title class="white--text">{{i.text}}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+        </v-list>
+        <v-icon icon="md:info"></v-icon>
     </v-navigation-drawer>
+    
    </nav>
+   
 </template>
 <script>
 export default {
 data(){
     return{
-        drawer:false
+        drawer:false,
+        links:[
+            {icon: 'mdi-view-dashboard',text:'Dashboard',route:'/'},
+            {icon: 'mdi-folder',text:'My Projects',route:'/projects'},
+            {icon: 'mdi-account',text:'Team',route:'/team'}
+        ]
     }
 }
 }
