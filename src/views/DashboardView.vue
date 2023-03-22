@@ -1,31 +1,53 @@
 <template>
   <div class="dashboard">
     <h1 class="subheading grey--text">Dashboard</h1>
-    <v-container class="my-5"> 
-        <v-card flat class="pa-3">
-          <v-layout row wrap>
+    <v-container class=" my-5"> 
+        <v-card flat class="pa-3 py-5" v-for="project in projects" :key="project.title">
+          <v-layout row wrap :class="`px-4 project ${project.status}`">
             <v-flex xs12 md6>
               <div class="caption grey--text">Project title</div>
-              <div>Create a new website</div>
+              <div>{{project.title}}</div>
             </v-flex>
             <v-flex xs6 sm4 md2>
               <div class="caption grey--text">Person</div>
-              <div>Ghassen</div>
+              <div>{{project.person}}</div>
             </v-flex>
             <v-flex xs6 sm4 md2>
               <div class="caption grey--text">Due Date</div>
-              <div>22 mars 2023</div>
+              <div>{{project.due}}</div>
             </v-flex>
             <v-flex xs2 sm4 md2>
               <div class="caption grey--text">Status</div>
-              <div>On going</div>
+              <div>{{project.status}}</div>
             </v-flex>
           </v-layout>
         </v-card>
+        
     </v-container>
   </div>
 </template>
-
 <script>
-  
+  export default {
+    data(){
+      return{
+        projects:[
+          {title:'Design Etudiant page',person:'Ghassen Ahmed',due:'22 mars 2023',status:'Ongoing',content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus fugit magnam aliquam quos nesciunt repellat perferendis quibusdam recusandae commodi.'},
+          {title:'Code up the home page',person:'Malek Naamen',due:'19 mars 2023',status:'Complete',content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus fugit magnam aliquam quos nesciunt repellat perferendis quibusdam recusandae commodi.'},
+          {title:'Design chef department page  ',person:'Hkimi Amine',due:'15 mars 2023',status:'Complete',content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus fugit magnam aliquam quos nesciunt repellat perferendis quibusdam recusandae commodi.'},
+          {title:'Authentification',person:'Talel Mejri',due:'25 mars 2023',status:'Overdue',content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus fugit magnam aliquam quos nesciunt repellat perferendis quibusdam recusandae commodi.'}
+        ]
+      }
+    }
+  }
 </script>
+<style>
+.project.Complete{
+  border-left: 4px solid rgb(13, 138, 13);
+}
+.project.Ongoing{
+  border-left: 4px solid orange;
+}
+.project.Overdue{
+  border-left: 4px solid red;
+}
+</style>
