@@ -51,6 +51,9 @@
                 </v-avatar>
                 <p class="white--text subheading mt-1">Ghassen Ahmed</p>
             </v-flex>
+            <v-flex class="mt-4">
+                <popup/>
+            </v-flex>
         </v-layout>
         <v-list>
             <v-list-item v-for="i in links" :key="i.text" route :to="i.route">
@@ -69,7 +72,11 @@
    
 </template>
 <script>
+import popup from '@/components/Popup.vue'
 export default {
+    components:{
+        popup
+    },
 data(){
     return{
         drawer:false,
