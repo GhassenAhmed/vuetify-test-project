@@ -1,7 +1,22 @@
 <template>
   <div class="dashboard">
     <h1 class="subheading grey--text">Dashboard</h1>
-    <v-container class=" my-5"> 
+    <v-container class="my-5"> 
+
+      <v-layout row class="mb-5 pl-3">
+        <v-btn small flat color="grey lighten-3" elevation="1">
+          <v-icon left small >mdi-folder-account-outline</v-icon>
+          <span class="action text-lowercase ">By Project</span>
+        </v-btn>
+
+        <v-btn small flat color="grey lighten-3 ml-4" elevation="1">
+          <v-icon left small >mdi-account-outline</v-icon>
+          <span class="action text-lowercase ">By Person</span>
+        </v-btn>
+
+      </v-layout>
+
+
         <v-card flat class="pa-3 py-5" v-for="project in projects" :key="project.title">
           <v-layout row wrap :class="`px-4 project ${project.status}`">
             <v-flex xs12 md6>
