@@ -18,6 +18,14 @@
         
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app class="deep-purple lighten-2">
+        <v-layout column align-center >
+            <v-flex class="mt-5">
+                <v-avatar size="100">
+                    <img src="../../public/avatar0.png" alt="" >
+                </v-avatar>
+                <p class="white--text subheading mt-1">Ghassen Ahmed</p>
+            </v-flex>
+        </v-layout>
         <v-list>
             <v-list-item v-for="i in links" :key="i.text" route :to="i.route">
                 <v-list-item-action>
