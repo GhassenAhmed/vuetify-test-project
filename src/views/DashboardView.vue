@@ -4,12 +4,12 @@
     <v-container class="my-5"> 
 
       <v-layout row class="mb-5 pl-3">
-        <v-btn small flat color="grey lighten-3" elevation="1">
+        <v-btn small flat color="grey lighten-3" elevation="1" @click="sortBy('title')">
           <v-icon left small >mdi-folder-account-outline</v-icon>
           <span class="action text-lowercase ">By Project</span>
         </v-btn>
 
-        <v-btn small flat color="grey lighten-3 ml-4" elevation="1">
+        <v-btn small flat color="grey lighten-3 ml-4" elevation="1" @click="sortBy('person')">
           <v-icon left small >mdi-account-outline</v-icon>
           <span class="action text-lowercase ">By Person</span>
         </v-btn>
@@ -52,6 +52,11 @@
           {title:'Design chef department page  ',person:'Hkimi Amine',due:'15 mars 2023',status:'Complete',content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus fugit magnam aliquam quos nesciunt repellat perferendis quibusdam recusandae commodi.'},
           {title:'Authentification',person:'Talel Mejri',due:'25 mars 2023',status:'Overdue',content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus fugit magnam aliquam quos nesciunt repellat perferendis quibusdam recusandae commodi.'}
         ]
+      }
+    },
+    methods:{
+      sortBy(prop){
+        this.projects.sort((a,b)=>a[prop]<b[prop]?-1:1);
       }
     }
   }
