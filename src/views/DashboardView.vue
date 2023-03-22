@@ -1,7 +1,9 @@
 <template>
-  <div class="home">
-    <h1>This is an home page</h1>
-    
+  <div class="dashboard">
+    <h1 class="subheading grey--text">Dashboard</h1>
+    <v-container class="my-5"> 
+      content
+    </v-container>
   </div>
 </template>
 
