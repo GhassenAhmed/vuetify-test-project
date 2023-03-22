@@ -17,7 +17,7 @@
               <div>{{project.due}}</div>
             </v-flex>
             <v-flex xs2 sm4 md2>
-              <div>
+              <div class="right">
                 <v-chip  :class="`${project.status} my-3 white--text caption`" >{{ project.status }}</v-chip>
               </div>
             </v-flex>
