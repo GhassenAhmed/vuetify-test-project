@@ -51,7 +51,7 @@
                 </v-avatar>
                 <p class="white--text subheading mt-1">Ghassen Ahmed</p>
             </v-flex>
-            <v-flex class="mt-4">
+            <v-flex class="mt-5">
                 <popup/>
             </v-flex>
         </v-layout>
